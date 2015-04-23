@@ -1,0 +1,85 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <title>d3 and Angular</title>
+    <meta name="description" content="d3 and Angular">
+    
+    <link href="lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        
+        @font-face {
+            font-family: 'Glyphicons Halflings';
+            src: url('fonts/glyphicons-halflings-regular.eot');
+            src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.woff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+        }
+
+        .bubble {
+            fill: gray;
+            opacity: 0.7;
+        }
+
+        .verde {
+            fill: green;
+        }
+
+        .amarelo {
+            fill: yellow    ;
+        }
+
+        .vermelho {
+            fill: red;
+        }
+
+       .axis {
+          font: 10px sans-serif;
+        }
+
+        .axis path,
+        .axis line {
+          fill: none;
+          stroke: #000;
+          shape-rendering: crispEdges;
+        }
+
+        #wrap {
+            padding-top: 60px;
+        }
+
+    </style>
+  </head>
+
+  <body ng-app="myApp" ng-controller="DemoChartCtrl">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">D3 and AngularJS</a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Tree Layout</a></li>
+            <li class="active"><a href="indexbb.html">Bubles Chart</a></li>
+            <li><a href="indexip.html">Matrix IP Chart</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </nav>
+    <div id="wrap" class="container">
+        <div class="row">
+            <d3-bubbles-chart data="d3DataBubble" label="name"
+                valuex="impacto" valuey="probabilidade" values="tamanho"
+                bubble-class="sinal"/>
+        </div>
+    </div>
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/bootstrap/bootstrap.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services/d3.js"></script>
+    <script src="scripts/controllers/demoChartsCtrl.js"></script>
+    
+    <script src="scripts/directives/d3BubblesChart.js"></script>
+
+  </body>
+</html>
